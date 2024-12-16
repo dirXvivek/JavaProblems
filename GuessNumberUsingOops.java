@@ -2,29 +2,23 @@ import java.util.Random;
 import java.util.Scanner;
 
 class Game{
-    //attribute for checking number of guess
     int noOfGuesses = 0;
     int randInt;
-
     //generating random number
     public Game(){
         //random instance
         Random rand = new Random();
-//      getRand(rand.nextInt(100));
         randInt =rand.nextInt(100);
-
     }
-    //getter getting the random generated number
+    //getting the random generated number
     public int compRand(){
         return randInt;
     }
-
     //taking input from user
     static int takeUserInput(Scanner input){
         System.out.print("Guess the number: ");
         return input.nextInt();
     }
-
     //comparing humanGuess number to computerGenerated number
     static boolean isCorrectNumber(int humanGuess,int randomInt){
         return humanGuess == randomInt;
@@ -38,27 +32,23 @@ public class GuessNumberUsingOops {
         //scanner instance
         Scanner input = new Scanner(System.in);
         int randInt = gm.compRand();
+        System.out.println("------Choose The Number Between 0 to 100------->");
         //looping
         while(true){
             int takeResult=Game.takeUserInput(input);
             boolean isBool= Game.isCorrectNumber(takeResult,randInt);
+            gm.noOfGuesses++;
             if(isBool){
                 System.out.println("Congratulation! both choose "+randInt);
-                System.out.println("You take "+gm.noOfGuesses+" chance to complete");
+                System.out.println("You take "+gm.noOfGuesses+" chance to guess the number");
                 break;
             }
             else if(takeResult>randInt){
-                System.out.println("ohh!! You choose greater number!");
-            }
-            else if(randInt>takeResult){
-                System.out.println("ohh!! you choose smaller number!");
+                System.out.println("ohh, you choose greater number!");
             }
             else{
-                System.out.println("Invalid data");
+                System.out.println("ohh, you choose smaller number!");
             }
-            gm.noOfGuesses++;
-
         }
-
     }
 }
