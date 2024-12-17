@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 class SurfaceCylinder{
-    int radius;
-    int height;
+   private int radius;
+   private int height;
     //getter radius
     public int getRadius(){
         return radius;
