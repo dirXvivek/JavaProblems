@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 class PatternLHP{
     int noOfRows;
     public void PyramidPattern(){
@@ -13,14 +12,19 @@ class PatternLHP{
             System.out.println(" ");
         }
     }
-    public PatternLHP(int n{
+    public PatternLHP(int n){
         noOfRows=n;
     }
 }
-
+//main class
 public class LeftHalfPyramid {
     public static void main(String[] args){
     //scanner instance
         Scanner input = new Scanner(System.in);
+        System.out.print("Enter the number of rows: ");
+        int noOfRow = input.nextInt();
+        //class instance
+        PatternLHP lhp = new PatternLHP(noOfRow);
+        lhp.PyramidPattern();
     }
 }
