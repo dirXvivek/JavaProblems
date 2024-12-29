@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class base{
     base(){
         System.out.println("this is the base class constructor without argument");
@@ -27,9 +29,13 @@ class grandBase extends derived{
         System.out.println("this is the grand base class constructor with argument z: "+x);
     }
 }
-
+//main class
 public class ConstructorInheritanceWithSuper {
     public static void main(String[] args){
-        grandBase gb = new grandBase(5);
+        //scanner instance
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the integer");
+        int integerValue = input.nextInt();
+        grandBase gb = new grandBase(integerValue);
     }
 }
